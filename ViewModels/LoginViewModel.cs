@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 namespace LoginRegister.ViewModels
 {
@@ -6,7 +7,7 @@ namespace LoginRegister.ViewModels
     {
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Please enter correct email address")]
-        public string Email { get; set; } = null!;
+        public string EmailorUserName { get; set; } = null!;
 
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; } = null!;

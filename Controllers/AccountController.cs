@@ -26,7 +26,7 @@ namespace LoginRegister.Controllers
         {
             if (!ModelState.IsValid) return View(user);
 
-            var dbUser = _db.Users.FirstOrDefault(x => x.Password == user.Password || x.Email == user.Email);
+            var dbUser = _db.Users.FirstOrDefault(x => x.Password == user.Password && ( x.Email == user.EmailorUserName || x.Username==user.EmailorUserName));
             if (dbUser == null) return View("NotFoundAccount");
 
             HttpContext.Session.SetString("username", dbUser.Username);
