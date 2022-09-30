@@ -35,7 +35,7 @@ namespace LoginRegister.Controllers
                 TempData["Username"] = dbUser.Username;
                 return RedirectToAction("Welcame", "Account");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login");
         }
 
         public IActionResult Registration() => View();
@@ -80,7 +80,7 @@ namespace LoginRegister.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("username");
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login");
         }
 
         public IActionResult Welcame()

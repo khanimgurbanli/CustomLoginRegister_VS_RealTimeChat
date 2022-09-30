@@ -4,9 +4,16 @@ namespace LoginRegister.Models.Hubs
 {
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string user,string message)
+        IHttpContextAccessor _httpContextAccessor;
+
+        public ChatHub(IHttpContextAccessor httpContextAccessor)
         {
-           // string a = HttpContext.Session.GetString("username"); niye burdan elcataniq yoxdu?
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        public async Task SendMessage(string message)
+        {
+           string user = _httpContextAccessor.HttpContext.Session.GetString("username"); //niye burdan elcataniq yoxdu?
 
             await Clients.All.SendAsync("ReceiveMessage",user, message);
         }
