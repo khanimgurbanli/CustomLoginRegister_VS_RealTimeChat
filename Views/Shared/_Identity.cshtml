@@ -1,0 +1,20 @@
+﻿@if (Context.Session.GetString("username") == null)
+{
+    <a class="btn btn-outline-success my-2 my-sm-2" asp-controller="Account" asp-action="Login">
+        <i class="bi bi-box-arrow-in-right"></i> Login
+    </a>
+    <span style="padding: 5px;"></span>
+
+    <a class="btn btn-outline-primary my-2 my-sm-2" asp-controller="Account" asp-action="Registration">
+        <i class="bi bi-person-plus"></i> Register
+    </a>
+}
+else
+{
+    <a class="btn btn-outline-success my-2 my-sm-2" asp-controller="Account" asp-action="Chat">
+        <i class="bi bi-box-arrow-in-right"></i> Chat
+    </a>
+    <a class="btn btn-outline-success my-2 my-sm-2" asp-controller="Account" asp-action="Logout">
+        <i class="bi bi-box-arrow-in-right"></i> Logout
+    </a>
+}

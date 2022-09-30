@@ -1,0 +1,52 @@
+﻿@using LoginRegister.ViewModels
+@model RegistrationViewModel
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4>Create a new account</h4>
+        </p>
+
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Registration" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Username" class="control-label">Username</label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                         <span asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Phone" class="control-label">Phone</label>
+                        <input asp-for="Phone" class="form-control" />
+                         <span asp-validation-for="Phone"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label">Password</label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword" class="control-label">Confirm Password</label>
+                        <input asp-for="ConfirmPassword" class="form-control" /> 
+                        <span asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-outline-success float-right" type="submit" value="Sign up" />
+                        <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Term
